@@ -62,7 +62,7 @@ internal class Program
         {
             services.AddHttpClient();
             services.AddSingleton<IStarWarsDataSourceSettings, StarWarsDataSourceSettings>();
-            services.AddTransient<IStarWarsDataSource, StarWarsDataSource>();
+            services.AddSingleton<IStarWarsDataSource, StarWarsDataSource>();
             services.AddTransient<ISerializationService, SerializationService>();
             services.AddTransient<IFileService, FileService>();
             services.AddSingleton<Program>();

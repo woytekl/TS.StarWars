@@ -3,4 +3,6 @@
 public interface IStarWarsDataSourceSettings
 {
     string ApiRootUrl { get; }
+
+    int MaxDegreeOfParallelism { get; }
 }
