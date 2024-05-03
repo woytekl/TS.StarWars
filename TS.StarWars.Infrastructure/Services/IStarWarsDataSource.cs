@@ -1,6 +1,6 @@
 ﻿namespace TS.StarWars.Infrastructure.Services;
 
-internal interface IStarWarsDataSource
+public interface IStarWarsDataSource
 {
-    Task<IEnumerable<IStarWarsCharacter>> GetStarWarsCharacterAsync(string searchCriteria);
+    Task<IEnumerable<IStarWarsCharacter>> GetStarWarsCharactersAsync(string searchCriteria);
 }

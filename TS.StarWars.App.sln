@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TS.SWAPI", "TS.SWAPI\TS.SWA
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TS.StarWars.Infrastructure", "TS.StarWars.Infrastructure\TS.StarWars.Infrastructure.csproj", "{BFD6C76C-F2B8-433A-8C88-DDD7A15CD477}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TS.StarWars.DataSource", "TS.StarWars.DataSource\TS.StarWars.DataSource.csproj", "{AA38FB3B-DAFE-4D63-8B6A-E4C43BE16979}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{BFD6C76C-F2B8-433A-8C88-DDD7A15CD477}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BFD6C76C-F2B8-433A-8C88-DDD7A15CD477}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BFD6C76C-F2B8-433A-8C88-DDD7A15CD477}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AA38FB3B-DAFE-4D63-8B6A-E4C43BE16979}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AA38FB3B-DAFE-4D63-8B6A-E4C43BE16979}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AA38FB3B-DAFE-4D63-8B6A-E4C43BE16979}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AA38FB3B-DAFE-4D63-8B6A-E4C43BE16979}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

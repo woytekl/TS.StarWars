@@ -2,29 +2,25 @@
 
 public interface IStarWarsCharacter
 {
-    string Birth_year { get; set; }
+    string BirthYear { get; }
 
-    DateTimeOffset Created { get; set; }
+    string EyeColor { get; }
 
-    DateTimeOffset Edited { get; set; }
+    string Gender { get; }
 
-    string Eye_color { get; set; }
+    string HairColor { get; }
 
-    string Gender { get; set; }
+    string Height { get; }
 
-    string Hair_color { get; set; }
+    string Homeworld { get; }
 
-    string Height { get; set; }
+    string Mass { get; }
 
-    string Homeworld { get; set; }
+    string Name { get; }
 
-    string Mass { get; set; }
+    string SkinColor { get; }
 
-    string Name { get; set; }
-
-    string Skin_color { get; set; }
-
-    string[] Starships { get; set; }
-    string[] Vehicles { get; set; }
-    string[] Films { get; set; }
+    string[] Starships { get; }
+    string[] Vehicles { get; }
+    string[] Films { get; }
 }

@@ -31,6 +31,6 @@
 	</Target>
 
 	<Target Name="Vehicles-PreBuild" BeforeTargets="PreBuildEvent">
-		<Exec Command="$(NSwagExe) jsonschema2csclient /GenerateDataAnnotations:false /name:Vehicle /namespace:TS.SWAPI.Models.Vehicles /input:$(ProjectDir)Contract\films-schema.json /output:$(ProjectDir)_Generated\Vehicles.g.cs" />
+		<Exec Command="$(NSwagExe) jsonschema2csclient /GenerateDataAnnotations:false /name:Vehicle /namespace:TS.SWAPI.Models.Vehicles /input:$(ProjectDir)Contract\vehicles-schema.json /output:$(ProjectDir)_Generated\Vehicles.g.cs" />
 	</Target>
 </Project>
