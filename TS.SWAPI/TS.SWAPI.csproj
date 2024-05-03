@@ -1,0 +1,36 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net8.0</TargetFramework>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+		<PackageReference Include="NSwag.MSBuild" Version="14.0.7">
+			<PrivateAssets>all</PrivateAssets>
+			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		</PackageReference>
+	</ItemGroup>
+
+	<Target Name="Films-PreBuild" BeforeTargets="PreBuildEvent">
+		<Exec Command="$(NSwagExe) jsonschema2csclient /GenerateDataAnnotations:false /name:Film /namespace:TS.SWAPI.Models.Films /input:$(ProjectDir)Contract\films-schema.json /output:$(ProjectDir)_Generated\Films.g.cs" />
+	</Target>
+
+	<Target Name="People-PreBuild" BeforeTargets="PreBuildEvent">
+		<Exec Command="$(NSwagExe) jsonschema2csclient /GenerateDataAnnotations:false /name:People /namespace:TS.SWAPI.Models.People /input:$(ProjectDir)Contract\people-schema.json /output:$(ProjectDir)_Generated\People.g.cs" />
+	</Target>
+
+	<Target Name="Search-PreBuild" BeforeTargets="PreBuildEvent">
+		<Exec Command="$(NSwagExe) jsonschema2csclient /GenerateDataAnnotations:false /name:Search /namespace:TS.SWAPI.Models.Search /input:$(ProjectDir)Contract\search-schema.json /output:$(ProjectDir)_Generated\Search.g.cs" />
+	</Target>
+
+	<Target Name="Starships-PreBuild" BeforeTargets="PreBuildEvent">
+		<Exec Command="$(NSwagExe) jsonschema2csclient /GenerateDataAnnotations:false /name:Starship /namespace:TS.SWAPI.Models.Starships /input:$(ProjectDir)Contract\starships-schema.json /output:$(ProjectDir)_Generated\Starships.g.cs" />
+	</Target>
+
+	<Target Name="Vehicles-PreBuild" BeforeTargets="PreBuildEvent">
+		<Exec Command="$(NSwagExe) jsonschema2csclient /GenerateDataAnnotations:false /name:Vehicle /namespace:TS.SWAPI.Models.Vehicles /input:$(ProjectDir)Contract\films-schema.json /output:$(ProjectDir)_Generated\Vehicles.g.cs" />
+	</Target>
+</Project>

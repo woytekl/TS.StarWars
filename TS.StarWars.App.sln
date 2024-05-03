@@ -5,6 +5,8 @@ VisualStudioVersion = 17.9.34728.123
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TS.StarWars.App", "TS.StarWars.App\TS.StarWars.App.csproj", "{B479129E-8492-4876-B8C4-2F7CBAB7FF87}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TS.SWAPI", "TS.SWAPI\TS.SWAPI.csproj", "{D5958668-67E9-4D4C-AAA0-59F69CCC9C9F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{B479129E-8492-4876-B8C4-2F7CBAB7FF87}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B479129E-8492-4876-B8C4-2F7CBAB7FF87}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B479129E-8492-4876-B8C4-2F7CBAB7FF87}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D5958668-67E9-4D4C-AAA0-59F69CCC9C9F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D5958668-67E9-4D4C-AAA0-59F69CCC9C9F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D5958668-67E9-4D4C-AAA0-59F69CCC9C9F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D5958668-67E9-4D4C-AAA0-59F69CCC9C9F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
