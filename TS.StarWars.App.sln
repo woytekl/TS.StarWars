@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TS.StarWars.DataSource", "T
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TS.Tasks", "TS.Tasks\TS.Tasks.csproj", "{186064F0-7EEC-4F6B-B8ED-7B2A3CE242A5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TS.SWAPI.Tests", "TS.SWAPI.Tests\TS.SWAPI.Tests.csproj", "{CA81E5F2-A44B-4F7E-9803-0AC141372B00}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{186064F0-7EEC-4F6B-B8ED-7B2A3CE242A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{186064F0-7EEC-4F6B-B8ED-7B2A3CE242A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{186064F0-7EEC-4F6B-B8ED-7B2A3CE242A5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CA81E5F2-A44B-4F7E-9803-0AC141372B00}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CA81E5F2-A44B-4F7E-9803-0AC141372B00}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CA81E5F2-A44B-4F7E-9803-0AC141372B00}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CA81E5F2-A44B-4F7E-9803-0AC141372B00}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

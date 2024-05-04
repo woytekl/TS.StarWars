@@ -2,7 +2,6 @@
 
 internal class SWAPIConstants
 {
-    public const string PeopleResourceName = "people";
-
     public const string SearchKeyword = "search";
+    public const string SchemaKeyword = "schema";
 }

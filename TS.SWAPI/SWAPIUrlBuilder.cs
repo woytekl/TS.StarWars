@@ -1,9 +1,18 @@
-﻿namespace TS.SWAPI;
+﻿using TS.SWAPI.Models.Resources;
 
-public static class SWAPIUrlBuilder
+namespace TS.SWAPI;
+
+public class SWAPIUrlBuilder
 {
-    public static Uri GetSearchPeopleUri(string baseUrl, string searchCriteria) 
+    private readonly Resource _resources;
+
+    public SWAPIUrlBuilder(Resource resources)
     {
-        return new Uri($"{baseUrl}{SWAPIConstants.PeopleResourceName}?{SWAPIConstants.SearchKeyword}={Uri.EscapeDataString(searchCriteria)}");
+        _resources = resources;
+    }
+
+    public Uri GetSearchPeopleUri(string searchCriteria) 
+    {
+        return new Uri($"{_resources.People}?{SWAPIConstants.SearchKeyword}={Uri.EscapeDataString(searchCriteria)}");
     }
 }

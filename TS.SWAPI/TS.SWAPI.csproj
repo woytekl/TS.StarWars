@@ -22,6 +22,10 @@
 		<Exec Command="$(NSwagExe) jsonschema2csclient /GenerateDataAnnotations:false /name:People /namespace:TS.SWAPI.Models.People /input:$(ProjectDir)Contract\people-schema.json /output:$(ProjectDir)_Generated\People.g.cs" />
 	</Target>
 
+	<Target Name="Resources-PreBuild" BeforeTargets="PreBuildEvent">
+		<Exec Command="$(NSwagExe) jsonschema2csclient /GenerateDataAnnotations:false /name:Resource /namespace:TS.SWAPI.Models.Resources /input:$(ProjectDir)Contract\resources-schema.json /output:$(ProjectDir)_Generated\Resources.g.cs" />
+	</Target>
+	
 	<Target Name="Search-PreBuild" BeforeTargets="PreBuildEvent">
 		<Exec Command="$(NSwagExe) jsonschema2csclient /GenerateDataAnnotations:false /name:Search /namespace:TS.SWAPI.Models.Search /input:$(ProjectDir)Contract\search-schema.json /output:$(ProjectDir)_Generated\Search.g.cs" />
 	</Target>

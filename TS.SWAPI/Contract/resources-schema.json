@@ -1,0 +1,30 @@
+{
+  "required": [
+    "people",
+    "films",
+    "vehicles",
+    "starships"
+  ],
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "people": {
+      "type": "string"
+    },
+    "planets": {
+      "type": "string"
+    },
+    "films": {
+      "type": "string"
+    },
+    "species": {
+      "type": "string"
+    },
+    "vehicles": {
+      "type": "string"
+    },
+    "starships": {
+      "type": "string"
+    }
+  }
+}

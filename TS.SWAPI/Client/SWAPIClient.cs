@@ -51,7 +51,7 @@ internal class SWAPIClient : ISWAPIClient
     {
         try
         {
-            using var responseStream = await response.Content.ReadAsStreamAsync().ConfigureAwait(false);
+            using var responseStream = await response.Content.ReadAsStreamAsync(cancellationToken).ConfigureAwait(false);
             using var streamReader = new StreamReader(responseStream);
             using var jsonTextReader = new JsonTextReader(streamReader);
 

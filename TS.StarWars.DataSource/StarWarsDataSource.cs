@@ -4,6 +4,7 @@ using TS.StarWars.Infrastructure.Services;
 using TS.SWAPI;
 using TS.SWAPI.Models.Films;
 using TS.SWAPI.Models.People;
+using TS.SWAPI.Models.Resources;
 using TS.SWAPI.Models.Search;
 using TS.SWAPI.Models.Starships;
 using TS.SWAPI.Models.Vehicles;
@@ -30,15 +31,20 @@ public class StarWarsDataSource : IStarWarsDataSource
 
     private ISWAPIClient GetSWAPIClient() => _swApiClientFactory.Create(_httpClientFactory.CreateClient());
 
+    private async Task<SWAPIUrlBuilder> GetSWAPIUrlBuilder() => new SWAPIUrlBuilder(await GetSWAPIClient().GetAsync<Resource>(new Uri(_starWarsDataSourceSettings.ApiRootUrl)));
+
     public async Task<IEnumerable<IStarWarsCharacter>> GetStarWarsCharactersAsync(string searchCriteria)
     {
         try
         {
+            _logger.LogInformation($"Loading SWAPI resources information...");
+            var swApiUrlBuilder = await GetSWAPIUrlBuilder();
+
             _logger.LogInformation($"Search for people based on the following criteria '{searchCriteria}'...");
-            var searchResults = await _taskExecutionManager.Run(() => GetSWAPIClient().GetAsync<Search>(SWAPIUrlBuilder.GetSearchPeopleUri(_starWarsDataSourceSettings.ApiRootUrl, searchCriteria)));
+            var searchResults = await _taskExecutionManager.Run(() => GetSWAPIClient().GetAsync<Search>(swApiUrlBuilder.GetSearchPeopleUri(searchCriteria)));
             _logger.LogInformation($"Search complete. {searchResults.Results.Count} people found");
 
-            IEnumerable<IStarWarsCharacter> starWarsCharacters = Enumerable.Empty<IStarWarsCharacter>();
+            IEnumerable<IStarWarsCharacter> starWarsCharacters = [];
             if (searchResults.Results.Count > 0)
             {
                 starWarsCharacters = await Task.WhenAll(searchResults.Results.Select(result => GetStarWarsCharacterAsync(result.Url)));
@@ -91,7 +97,7 @@ public class StarWarsDataSource : IStarWarsDataSource
     private async Task<string> GetFilmTitleAsync(string? url)
     {
         _logger.LogInformation($"Loading film title: {url}");
-        if (url == null) throw new ArgumentNullException("Film url is null!");
+        ArgumentNullException.ThrowIfNull(url);
 
         var film = await _taskExecutionManager.Run(() => GetSWAPIClient().GetAsync<Film>(new Uri(url)));
         return film.Title;
@@ -100,7 +106,7 @@ public class StarWarsDataSource : IStarWarsDataSource
     private async Task<string> GetStarshipNameAsync(string? url)
     {
         _logger.LogInformation($"Loading starship name: {url}");
-        if (url == null) throw new ArgumentNullException("Starship url is null!");
+        ArgumentNullException.ThrowIfNull(url);
 
         var starship = await _taskExecutionManager.Run(() => GetSWAPIClient().GetAsync<Starship>(new Uri(url)));
         return starship.Name;
@@ -109,7 +115,7 @@ public class StarWarsDataSource : IStarWarsDataSource
     private async Task<string> GetVehicleNameAsync(string? url)
     {
         _logger.LogInformation($"Loading vehicle name: {url}");
-        if (url == null) throw new ArgumentNullException("Vehicle url is null!");
+        ArgumentNullException.ThrowIfNull(url);
 
         var vehicle = await _taskExecutionManager.Run(() => GetSWAPIClient().GetAsync<Vehicle>(new Uri(url)));
         return vehicle.Name;
