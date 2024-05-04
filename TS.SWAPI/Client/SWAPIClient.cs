@@ -20,7 +20,7 @@ internal class SWAPIClient : ISWAPIClient
         return await GetAsync<T>(requestUri, CancellationToken.None);
     }
 
-    public async virtual Task<T> GetAsync<T>(Uri requestUri, CancellationToken cancellationToken) where T : class, new()
+    protected async virtual Task<T> GetAsync<T>(Uri requestUri, CancellationToken cancellationToken) where T : class, new()
     {
         using var request = new HttpRequestMessage();
         request.Method = HttpMethod.Get;

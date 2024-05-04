@@ -1,16 +1,15 @@
 ﻿using TS.SWAPI.Client;
 
-namespace TS.SWAPI
-{
-    public class SWAPIClientFactory
-    {
-        public SWAPIClientFactory()
-        {
-        }
+namespace TS.SWAPI;
 
-        public ISWAPIClient Create(HttpClient httpClient) 
-        {
-            return new SWAPIClient(httpClient);
-        }
+public class SWAPIClientFactory
+{
+    public SWAPIClientFactory()
+    {
+    }
+
+    public ISWAPIClient Create(HttpClient httpClient) 
+    {
+        return new SWAPIClient(httpClient);
     }
 }
